@@ -32,7 +32,7 @@ class LaposteTransport(Transport):
             }
         """
         soap_message = self.soap_wrap(body)
-        log.debug(soap_message)
+        log.debug('Request:\n %s', (soap_message))
         response = self.send_request(soap_message)
         log.info('WS response time %s' % response.elapsed.total_seconds())
         return self.handle_response(response)
@@ -100,6 +100,8 @@ class LaposteTransport(Transport):
             after_start = between_boundaries.split(start)[1]
             clean_xml = after_start.strip()  # = trim()
             return clean_xml
+
+        # log.debug('Response: 200. Text:\n %s', (response.text))
 
         response_xml = extract_body(response)
 

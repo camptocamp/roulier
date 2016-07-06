@@ -47,7 +47,7 @@ class LaposteEncoder(Encoder):
             "transportationAmount": dj['service']['transportationAmount'],
             "totalAmount": dj['service']['totalAmount'],
             "orderNumber": "",
-            "commercialName": "",
+            "commercialName": dj['from_address']['name'],
             "returnTypeChoice": dj['service']['returnTypeChoice'],
         }
 
@@ -73,7 +73,7 @@ class LaposteEncoder(Encoder):
         sender_address = {
             "companyName": dj['from_address']['company'],
             "lastName": dj['from_address']['name'],
-            "firstName": "",
+            "firstName": "Michelle",
             "line0": "",
             "line1": dj['from_address']['street1'],
             "line2": dj['from_address']['street2'],
@@ -93,7 +93,7 @@ class LaposteEncoder(Encoder):
         receiver_address = {
             "companyName": dj['to_address']['company'],
             "lastName": dj['to_address']['name'],
-            "firstName": "",
+            "firstName": "Michelle",
             "line0": "",
             "line1": dj['to_address']['street1'],
             "line2": dj['to_address']['street2'],

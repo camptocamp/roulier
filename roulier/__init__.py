@@ -8,4 +8,6 @@ import logging
 __all__ = [roulier]
 #__version__ = open('VERSION').read().strip()
 log = logging.getLogger(__name__)
-log.addHandler(logging.NullHandler())
+# log.addHandler(logging.NullHandler())
+
+log.setLevel(logging.DEBUG)
